@@ -1,0 +1,1 @@
+wcat.wsf -clientfile scenario.ubr -settingsfile settings.ubr -port 6712 -terminate -run -extended

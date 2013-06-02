@@ -1,0 +1,36 @@
+scenario
+{
+    warmup = 10;
+    duration = 20;
+    cooldown = 20;
+
+    default
+    {
+        setheader
+        {
+            name = "Connection";
+            value = "keep-alive";
+        }
+        setheader
+        {
+            name    = "Host";
+            value   = "localhost:6712";
+        }
+		
+        version     = HTTP11;
+        statuscode  = 200;
+        close       = ka;
+        cookies = false;
+	}
+	
+    transaction
+    {
+        id      = "1";
+        weight  = 1;
+        request
+        {
+            url         = "/api/cars";
+            port        = 6712;
+        }
+    }
+}
